@@ -1,7 +1,198 @@
-.center {
+html {
+    
+}
+
+
+
+table, td, th {
+    border: 1px solid black;
+}
+
+table, tr, td {
     text-align: center;
 }
 
+table {
+    border-color: whitesmoke;
+    border-collapse: collapse;
+}
+
+th, td {
+    border: solid 1.5px #fff;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    background-color: #ddd;
+    background: url(./media/fondo-hiperespacial-3d-efecto-tunel-urdimbre_1048-12526.webp);
+    background-repeat: no-repeat;
+    background-size: cover;
+    font-size: small;
+    color: #fff;
+}
+
+form {
+    background: url(./media/c3po.webp) no-repeat;
+    background-size: contain;
+}
+
+label {
+    color: #fff;
+}
+
+.underline {
+    text-decoration: underline;
+}
+
+.subtitulo {
+    text-align: center;
+}
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+#menu ul li {
+    display: inline-block;
+}
+
+.center {
+    text-align: center;
+}
+#menu ul li a {
+    display: block;
+    text-decoration: none;
+    text-align: justify;
+    padding: 15px 60px;
+}
+
+th {
+    background-color: darkgrey;
+}
+
+tr:hover {
+    background-color: #e8e337;
+}
+
+a {
+    cursor: pointer;
+}
+
+a:link {
+    color: #eee;
+}
+
+a:visited {
+    color: #eee;
+}
+
+a:hover {
+    color: #e8e337;
+}
+
+p {
+    color: #fff;
+}
+
+button:hover {
+    color: #451a2b;
+}
+
+.button {
+    cursor: pointer;
+    border-bottom: #222 outset;
+}
+/*----------------------------------- Footer ----------------------------------------*/
+
+footer {
+    background-color: #222;
+    padding: 0.5rem;
+}
+
+footer div {
+    float: right;
+
+}
+
+footer {
+    background-color: #434343;
+    border-radius: 1px solid #434343;
+    color: #fff;
+}
+
+footer nav a {
+    color: #fff;
+    text-decoration: none;
+    padding-left: 14px;
+    display: inline-block;
+    height: 1rem;
+}
+
+footer div h4, a {
+    padding-left: 14px;
+}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: 25% 75%;
+    align-items: center;
+    align-items: space-evenly;
+
+}
+
+footer nav {
+    position: absolute;
+    right: 50px;
+}
+/*----------------------------- termina footer---------------------------------*/
+
+.flex-container1 {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0 15px;
+}
+
+.flex-container2 {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+}
+
+#menu {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+
+section {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+h3 {
+    text-align: center;
+}
+
+table {
+    margin: 0 auto;
+}
+
+.iframe {
+    display: block;
+    margin: 0 auto;
+}
+
+div > form {
+   position: relative;
+   left: 33.33% ;
+}
+
+/* ----------------------------------- Nuevo código -----------------------------------------*/
 .portada {
     width: 800px;
     height: 316px;    
@@ -11,6 +202,11 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+}
+
+header {
+    font-family: 'Montserrat', sans-serif;
+    font-size: small;
 }
 
 @media screen and (min-width:768px) {
@@ -26,12 +222,26 @@
     #titulo, #titulo4 {
         margin-top: 56px;
     }
+    .navbar {
+        background-color: #686868;
+        
+    }
+
+    hr {
+        display: none;
+    }
 }
 
-@media screen and (max-width:800px) {
+@media screen and (max-width:900px) {
     .portada{
         max-width: 75vw;
-        
+    }
+
+    .flex-container1 {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
     }
 }
 
@@ -40,4 +250,7 @@
         max-height: 40%;
     }
     
+    .destacado {
+        font-size: 0.75rem;
+    }
 }
