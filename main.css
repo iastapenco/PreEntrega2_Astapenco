@@ -253,7 +253,7 @@ header {
         display: grid;
         grid-template-columns: 35% 65%;
         align-items: center;
-
+        margin-top: 10px;
     }
 }
 
@@ -266,6 +266,11 @@ header {
 @media screen and (min-width:900px) {
     #menu ul li a {
         padding: 15px 25px;
+    }
+
+    .iframe {
+        width: 560px;
+        height: 315px;
     }
 }
 
@@ -280,6 +285,11 @@ header {
         justify-content: space-between;
         align-items: center;
     }
+
+    .iframe {
+        width: 478px;
+        height: 268px;
+    }    
 }
 
 @media screen and (max-width:375px) {
@@ -289,6 +299,11 @@ header {
 
     .destacado {
         font-size: 0.75rem;
+    }
+
+    .iframe {
+        width: 233px;
+        height: 131px;
     }
 }
 
@@ -348,5 +363,10 @@ header {
 
     footer nav a {
         padding-left: 10px;
+    }
+
+    .iframe {
+        width: 264px;
+        height: 148px;
     }
 }
