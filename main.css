@@ -1,8 +1,13 @@
-html {
-    
+body {
+    font-family: 'Montserrat', sans-serif;
+    background-color: #ddd;
+    background: url(./media/fondo-hiperespacial-3d-efecto-tunel-urdimbre_1048-12526.webp);
+    background-repeat: no-repeat;
+    background-size: cover;
+    font-size: small;
+    color: #fff;
+    margin: 0 10px ;
 }
-
-
 
 table, td, th {
     border: 1px solid black;
@@ -21,14 +26,9 @@ th, td {
     border: solid 1.5px #fff;
 }
 
-body {
-    font-family: 'Montserrat', sans-serif;
-    background-color: #ddd;
-    background: url(./media/fondo-hiperespacial-3d-efecto-tunel-urdimbre_1048-12526.webp);
-    background-repeat: no-repeat;
-    background-size: cover;
-    font-size: small;
-    color: #fff;
+
+.display-6 {
+    font-size: 1.5rem;
 }
 
 form {
@@ -65,7 +65,7 @@ ul {
     display: block;
     text-decoration: none;
     text-align: justify;
-    padding: 15px 60px;
+    padding: 0;
 }
 
 th {
@@ -74,6 +74,7 @@ th {
 
 tr:hover {
     background-color: #e8e337;
+    transition: .4s;
 }
 
 a {
@@ -90,6 +91,7 @@ a:visited {
 
 a:hover {
     color: #e8e337;
+    transition: .4s;
 }
 
 p {
@@ -109,11 +111,6 @@ button:hover {
 footer {
     background-color: #222;
     padding: 0.5rem;
-}
-
-footer div {
-    float: right;
-
 }
 
 footer {
@@ -166,6 +163,7 @@ footer nav {
     display: flex;
     flex-direction: row;
     justify-content: space-evenly;
+    margin: 10px 15px;
 }
 
 section {
@@ -193,10 +191,6 @@ div > form {
 }
 
 /* ----------------------------------- Nuevo código -----------------------------------------*/
-.portada {
-    width: 800px;
-    height: 316px;    
-}
 
 #titulo, #titulo4 {
     display: flex;
@@ -207,6 +201,10 @@ div > form {
 header {
     font-family: 'Montserrat', sans-serif;
     font-size: small;
+}
+.yoda {
+    width: 500px;
+    height: 320px;
 }
 
 @media screen and (min-width:768px) {
@@ -219,8 +217,13 @@ header {
     #menu {
         display: none;
     }
+    .yoda {
+        width: 320px;
+        height: auto;
+    }
     #titulo, #titulo4 {
         margin-top: 56px;
+        margin-bottom: 10px;
     }
     .navbar {
         background-color: #686868;
@@ -229,6 +232,26 @@ header {
 
     hr {
         display: none;
+    }
+
+    .display-5 {
+        font-size: 1.5rem;
+    }
+
+    .display-6 {
+        font-size: 1rem;
+    }
+}
+
+@media screen and (min-width:1251px) {
+    #menu ul li a {
+        padding: 15px 60px;
+    }
+}
+
+@media screen and (min-width:900px) {
+    #menu ul li a {
+        padding: 15px 25px;
     }
 }
 
@@ -249,8 +272,51 @@ header {
     .portada {
         max-height: 40%;
     }
-    
+   
     .destacado {
         font-size: 0.75rem;
     }
 }
+
+@media screen and (min-width:768px) and (max-width:900px) {
+    #menu {
+        display: block;
+    }
+
+   
+
+
+       #menu > ul {
+        display: grid;
+        grid-template-columns: repeat(5, 1fr);
+        grid-template-rows: repeat(2, 1fr);
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .item1 {
+        grid-column: 1/2;
+        grid-row: 1/2;
+    }
+
+    .item2 {
+        grid-column: 3/4;
+        grid-row:1/2;
+    }
+
+    .item3 {
+        grid-column: 5/6;
+        grid-row: 1/2;
+    }
+
+    .item4 {
+        grid-column: 2/3;
+        grid-row:2/3;
+    }
+
+    .item5 {
+        grid-column:4/5;
+        grid-row:2/3;
+    }
+}
+
