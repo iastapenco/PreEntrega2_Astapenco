@@ -16,9 +16,6 @@ const articulos = [
 
 const articulosSeleccionados = [];
 const descuentosFinales = [];
-let precio1;
-let precio2;
-let precio3;
 let nombreArticulo;
 
 function añadirArticulo(x) {
