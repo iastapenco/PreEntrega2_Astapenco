@@ -1,81 +1,86 @@
-alert("Ingrese el precio de los tres artículos para ver el descuento en cada uno y el total a pagar por su compra. Recuerde que el precio de cada articulo tiene un tope de $1500 y que los precios deben ser ingresados de mayor a menor ya que el descuento del 10% se hará sobre el artículo con mayor valor y el descuento del 30% sobre el de menor valor.")
+class Articulo {
+    constructor(nombre, precio) {
+        this.nombre = nombre;
+        this.precio = precio;
+    }
+}
 
-const preciosTopes = [];
+const articulos = [
+    new Articulo("pantalón jeans", 2000),
+    new Articulo("pantalón de vestir", 2500),
+    new Articulo("remera", 900),
+    new Articulo("buzo", 1200),
+    new Articulo("camisa", 1600),
+    new Articulo("medias", 300),
+]
+
+const articulosSeleccionados = [];
 const descuentosFinales = [];
 let precio1;
 let precio2;
 let precio3;
+let nombreArticulo;
 
-function añadirPrecio(x) {
-    preciosTopes.push(x);
+function añadirArticulo(x) {
+    articulosSeleccionados.push(x);
 };
 
-let precio1Input = Number(prompt("ingrese precio que se le hará un 10% de descuento"));
-if (isNaN(precio1Input)) {
-    alert("Ingrese un valor numerico");
-} else {
-    precio1 = precio1Input;
-    añadirPrecio(precio1);
-    let precio2Input = Number(prompt("ingrese precio que se le hará un 20% de descuento"));
-    if (isNaN(precio2Input)) {
-        alert("Ingrese un valor numerico");
-    } else {
-        precio2 = precio2Input;
-        añadirPrecio(precio2);
-        let precio3Input = Number(prompt("ingrese precio que se le hará un 30% de descuento"));
-        if (isNaN(precio3Input)) {
-            alert("Ingrese un valor numerico")
-        } else {
-            precio3 = precio3Input;
-            añadirPrecio(precio3);
-        }
+function obtenerArticulo() {
+    confirm("A continuación seleccione el número correspondiente al artículo que desea calcularle el descuento");
+    let seleccion = prompt("1:pantalón jeans, 2:pantalón de vestir, 3:remera, 4:buzo, 5:camisa, 6:medias");
+    if (seleccion == 1)  {
+     nombreArticulo = "pantalón jeans";
+    }else if (seleccion == 2) {
+        nombreArticulo = "pantalón de vestir";
+    }else if (seleccion == 3){
+        nombreArticulo = "remera";
+    }else if (seleccion == 4) {
+        nombreArticulo = "buzo";
+    }else if (seleccion == 5) {
+        nombreArticulo = "camisa";
+    }else if (seleccion == 6) {
+        nombreArticulo = "medias";
+    }else{
+        alert("El dato ingresado no es correcto");
+        obtenerArticulo();
     }
+};
+
+for(let i = 0; i <3; i++) {
+    obtenerArticulo();
+    const articulo1 =  articulos.find(articulo => articulo.nombre == nombreArticulo);
+
+    añadirArticulo(articulo1);
 }
 
-console.log(preciosTopes);
-
-let preciosValidos = true;
-
-for (let i = 0; i < preciosTopes.length; i++) {
-    const element = preciosTopes[i];
-    console.log(element);
-    if (element > 1500) {
-        alert("El precio $" + element + " supera el tope de $1500");
-        preciosValidos = false;
-        break;
-    }
+for (let i = 0; i < articulosSeleccionados.length; i++) {
+    const elemento = articulosSeleccionados[i];
+    console.log(elemento);
 }
 
-console.log(preciosValidos);
+console.log(articulosSeleccionados);
 
-preciosTopes.forEach((precio, i) => {
+const preciosSeleccionados = articulosSeleccionados.map(art=> art.precio);
+console.log(preciosSeleccionados);
+
+preciosSeleccionados.forEach((art, i) => {
     let descuentos = 0;
-    descuentos += Math.round(0.1 * (i + 1) * precio);
+    descuentos += Math.round(0.1 * (i + 1) * art);
     return descuentosFinales.push(descuentos);
 
 });
 
 console.log(descuentosFinales);
-let suma = 0;
+
+let descuentoTotal = 0;
 descuentosFinales.forEach((descuento) => {
 
-    suma += descuento;
+    descuentoTotal += descuento;
 })
-console.log(suma);
+console.log(`El descuento total que se aplicará a su compra es de: $ ${descuentoTotal}`);
 
-//if (preciosValidos) {
-//   let precioDescuento = Math.round(0.9 * precio1 + 0.8 * precio2 + 0.7 * precio3);
-// console.log(precioDescuento);
-//
-//  if ((precio1 >= precio2) && (precio2 >= precio3)) {
-//    alert("el descuento en el primer artículo es: " + descuento1 +
-//      "; el descuento en el artículo 2 es: " + descuento2 +
-//    "; el descuento en el artículo 3 es: " + descuento3); */
-//
-//         alert("El total a pagar será: " + precioDescuento);
-//    } else {
-//        alert("uno o más precios ingresados no son correctos. Intente nuevamente");
-//    }
-//} else {
-//    alert("Recargue la pagina para ingresar los precios nuevamente")
-//}
+let preciosSinDescuento = 0;
+preciosSeleccionados.forEach((precio) => {
+    preciosSinDescuento += (precio);
+})
+console.log(`El total a pagar será de $ ${preciosSinDescuento - descuentoTotal}`);
