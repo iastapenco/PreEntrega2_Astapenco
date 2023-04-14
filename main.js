@@ -16,7 +16,6 @@ const articulos = [
 
 const articulosSeleccionados = [];
 const descuentosFinales = [];
-let nombreArticulo;
 
 function añadirArticulo(x) {
     articulosSeleccionados.push(x);
@@ -26,25 +25,28 @@ function obtenerArticulo() {
     confirm("A continuación seleccione el número correspondiente al artículo que desea calcularle el descuento");
     let seleccion = prompt("1:pantalón jeans, 2:pantalón de vestir, 3:remera, 4:buzo, 5:camisa, 6:medias");
     if (seleccion == 1)  {
-     nombreArticulo = "pantalón jeans";
+     return "pantalón jeans";
     }else if (seleccion == 2) {
-        nombreArticulo = "pantalón de vestir";
+        return "pantalón de vestir";
     }else if (seleccion == 3){
-        nombreArticulo = "remera";
+        return "remera";
     }else if (seleccion == 4) {
-        nombreArticulo = "buzo";
+        return "buzo";
     }else if (seleccion == 5) {
-        nombreArticulo = "camisa";
+        return "camisa";
     }else if (seleccion == 6) {
-        nombreArticulo = "medias";
+        return "medias";
     }else{
         alert("El dato ingresado no es correcto");
         obtenerArticulo();
     }
 };
 
+alert("El simulador de descuentos le aplicará un 10% de descuento al primer artículo que seleccione de los disponibles"+";"+
+ "un descuento de 20% al segundo artículo y 30% de descuento al tercero");
+
 for(let i = 0; i <3; i++) {
-    obtenerArticulo();
+    const nombreArticulo = obtenerArticulo();
     const articulo1 =  articulos.find(articulo => articulo.nombre == nombreArticulo);
 
     añadirArticulo(articulo1);
