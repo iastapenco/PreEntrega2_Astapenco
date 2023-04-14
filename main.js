@@ -74,10 +74,10 @@ descuentosFinales.forEach((descuento) => {
 
     descuentoTotal += descuento;
 })
-console.log(`El descuento total que se aplicará a su compra es de: $ ${descuentoTotal}`);
+alert(`El descuento total que se aplicará a su compra es de: $ ${descuentoTotal}`);
 
 let preciosSinDescuento = 0;
 preciosSeleccionados.forEach((precio) => {
     preciosSinDescuento += (precio);
 })
-console.log(`El total a pagar será de $ ${preciosSinDescuento - descuentoTotal}`);
+alert(`El total a pagar será de $ ${preciosSinDescuento - descuentoTotal}`);
